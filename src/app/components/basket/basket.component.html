@@ -15,7 +15,7 @@
         <tr *ngFor="let basket of baskets let index=index">
             <td> {{index+1}} </td>
             <td> {{basket.product.name}} </td>
-            <td> <input type="number" min="0" id="basketQuantitiy-{{basket.product.name}}" (click)="changeData(basket)"
+            <td> <input type="number" min="1" id="basketQuantitiy-{{basket.product.name}}" (click)="changeData(basket)"
                 class="form-control" [value]="basket.quantity"> </td>
             <td> {{(basket.quantity*basket.product.price) | currency:'TRY' :'symbol-narrow' : '1.2-2'}} </td>
             <td> <button class="btn btn-sm btn-danger" (click)="deleteProduct(basket)"> 
@@ -34,5 +34,6 @@
     </tfoot>
 </table>
 <div class="form-group text-center">
-   <button class="btn btn-success">Ödeme Yap</button> 
+   <button class="btn btn-success" data-bs-toggle="modal"  data-bs-target="#paymentModal">Ödeme Yap</button> 
 </div>
+<app-payment [total]="total" (myEvent)="payment($event)"></app-payment>

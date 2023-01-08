@@ -1,1 +1,45 @@
-<p>payment works!</p>
+<div class="modal fade" id="paymentModal" tabindex="-1" 
+aria-labelledby="exampleModalLabel" aria-hidden="true">
+    
+    <div class="container p-0 modal-dialog">
+        <div class="card px-4 modal-content">
+            <p class="h8 py-3">Payment Details</p>
+            <div class="row gx-3 modal-header">
+                <div class="col-12">
+                    <div class="d-flex flex-column">
+                        <p class="text mb-1">Kart Ad Soyad</p>
+                        <input class="form-control mb-3" type="text" placeholder="Name Surname" value="">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="d-flex flex-column">
+                        <p class="text mb-1">Kart Numarası</p>
+                        <input class="form-control mb-3" type="text" placeholder="1234 5678 435678">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="d-flex flex-column">
+                        <p class="text mb-1">Son Kullanma Tarihi</p>
+                        <input class="form-control mb-3" type="text" placeholder="MM/YYYY">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="d-flex flex-column">
+                        <p class="text mb-1">CVV/CVC</p>
+                        <input class="form-control mb-3 pt-2 " type="password" placeholder="***">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="btn btn-primary mb-3">
+                        <span class="ps-3">{{total| currency:'TRY' :'symbol-narrow'}}</span>
+                        <span class="fas fa-arrow-right" (click)="payment()" data-bs-dismiss="modal"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+

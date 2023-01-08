@@ -34,4 +34,12 @@ export class BasketComponent {
     basket.quantity=quantity;
     this.baskets.push(basket);
   }
+
+  payment(event:any){
+if (this.total==event.total){
+  let count= this.baskets.length;
+  this.baskets.splice(0,count);
+}
+
+  }
 }
